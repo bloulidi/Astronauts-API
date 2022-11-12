@@ -2,9 +2,7 @@ const express = require("express");
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
-
-const app = express();
-const port = 3000;
+const bodyParser = require("body-parser");
 
 // Fix the error: Safari can’t open the page “https://localhost:3000” because Safari can’t establish a secure connection to the server “localhost”.
 const options = {
@@ -12,8 +10,24 @@ const options = {
   cert: fs.readFileSync(path.join(__dirname, "/server.crt")),
 };
 
-app.get("/", (req, res) => {
-  res.send("Hello World, from express");
+const app = express();
+const port = 3000;
+
+let astronauts = [];
+
+// Enabling middlewares
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post("/astronauts", (req, res) => {
+  const astronauts = req.body;
+
+  // Output the book to the console for debugging
+  console.log(astronauts);
+  books.push(astronauts);
+
+  res.send("Astronauts is added to the database");
 });
 
 https.createServer(options, app).listen(port, () => {
