@@ -1,0 +1,24 @@
+{
+  "name": "astronauts-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bloulidi/Astronauts-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bloulidi/Astronauts-API/issues"
+  },
+  "homepage": "https://github.com/bloulidi/Astronauts-API#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
