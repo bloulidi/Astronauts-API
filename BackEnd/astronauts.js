@@ -1,6 +1,7 @@
 const express = require("express");
 const https = require("https");
 const fs = require("fs");
+const cors = require("cors");
 const path = require("path");
 const bodyParser = require("body-parser");
 
@@ -21,13 +22,31 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post("/astronauts", (req, res) => {
-  const astronauts = req.body;
+  const astronautsReq = req.body;
 
   // Output the book to the console for debugging
-  console.log(astronauts);
-  books.push(astronauts);
+  console.log(astronautsReq);
+  astronauts.push(astronautsReq);
 
   res.send("Astronauts is added to the database");
+});
+
+app.delete("/astronaut/:id", (req, res) => {
+  const id = req.params.id;
+
+  // Remove item from the books array
+  astronauts = astronauts.filter((astronaut) => {
+    if (astronaut.id !== id) {
+      return true;
+    }
+    return false;
+  });
+
+  res.send("Astronaut is deleted");
+});
+
+app.get("/astronauts", (req, res) => {
+  res.json(astronauts);
 });
 
 https.createServer(options, app).listen(port, () => {
