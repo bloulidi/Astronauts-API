@@ -1,6 +1,7 @@
 import Axios from "axios";
 import React, { useState } from "react";
 import uniqid from "uniqid";
+import Button from "react-bootstrap/Button";
 
 function AddAstronaut() {
   const [data, setData] = useState({
@@ -8,6 +9,7 @@ function AddAstronaut() {
     age: 0,
     id: "",
   });
+  const [message, setMessage] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -16,16 +18,17 @@ function AddAstronaut() {
       name: data.name,
       age: data.age,
       id: uniqid(),
-    }).catch(function (error) {
-      console.log(error);
-    });
+    })
+      .then(() => setMessage("Successfully Added Astronaut"))
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   const handle = (e) => {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData);
   };
 
   return (
@@ -62,8 +65,11 @@ function AddAstronaut() {
         </label>
         <br />
         <div className="align-right">
-          <button type="submit">Add Astronaut</button>
+          <Button variant="primary" type="submit">
+            Add Astronaut
+          </Button>
         </div>
+        <div>{message}</div>
       </form>
     </div>
   );
