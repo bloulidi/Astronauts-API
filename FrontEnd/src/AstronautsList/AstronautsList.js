@@ -10,27 +10,6 @@ function AstronautsList() {
     });
   };
 
-  //   const editAstronaut = (id) => {
-  //     Axios.post(`https://localhost:3001/astronaut/${id}`).then((res) => {
-  //       window.location.reload();
-  //     });
-
-  //     const { title, author, publisher, publish_date, numOfPages } = book;
-
-  //     // Filling information about the book in the form inside the modal
-  //     document.getElementById("isbn").value = isbn;
-  //     document.getElementById("title").value = title;
-  //     document.getElementById("author").value = author;
-  //     document.getElementById("publisher").value = publisher;
-  //     document.getElementById("publish_date").value = publish_date;
-  //     document.getElementById("numOfPages").value = numOfPages;
-
-  //     // Setting up the action url for the book
-  //     document.getElementById(
-  //       "editForm"
-  //     ).action = `http://localhost:3000/book/${isbn}`;
-  //   };
-
   const loadBooks = () => {
     Axios.get("https://localhost:3001/astronauts").then((res) => {
       setAstronautList(res.data);
@@ -65,12 +44,6 @@ function AstronautsList() {
                     onClick={() => deleteAstronaut(astronaut.id)}>
                     Delete
                   </button>
-                  {/* <button
-                  types="button"
-                  className="btn btn-primary"
-                  onClick={() => editAstronaut(astronaut.id)}>
-                  Edit
-                </button> */}
                 </div>
               </div>
             </div>
