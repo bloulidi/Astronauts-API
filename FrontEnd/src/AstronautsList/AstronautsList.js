@@ -10,6 +10,12 @@ function AstronautsList() {
     });
   };
 
+  const loadBooks = () => {
+    Axios.get("https://localhost:3001/astronauts").then((res) => {
+      setAstronautList(res.data);
+    });
+  };
+
   useEffect(() => {
     loadBooks();
   }, []);
