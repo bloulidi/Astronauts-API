@@ -34,7 +34,6 @@ app.post("/astronauts", (req, res) => {
 app.delete("/astronaut/:id", (req, res) => {
   const id = req.params.id;
 
-  // Remove item from the books array
   astronauts = astronauts.filter((astronaut) => {
     if (astronaut.id !== id) {
       return true;
@@ -43,6 +42,21 @@ app.delete("/astronaut/:id", (req, res) => {
   });
 
   res.send("Astronaut is deleted");
+});
+
+app.post("/astronaut/:id", (req, res) => {
+  const id = req.params.id;
+  const newBook = req.body;
+
+  // Remove item from the books array
+  for (let i = 0; i < astronauts.length; i++) {
+    let astronaut = astronauts[i];
+    if (astronaut.id === id) {
+      astronauts[i] = newBook;
+    }
+  }
+
+  res.send("Astronaut is edited");
 });
 
 app.get("/astronauts", (req, res) => {
