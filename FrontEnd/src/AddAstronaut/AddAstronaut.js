@@ -2,6 +2,7 @@ import Axios from "axios";
 import React, { useState } from "react";
 import uniqid from "uniqid";
 import Button from "react-bootstrap/Button";
+import "../App.css";
 
 function AddAstronaut() {
   const [data, setData] = useState({
@@ -32,7 +33,7 @@ function AddAstronaut() {
   };
 
   return (
-    <div className="container">
+    <div className="astronaut-list-container">
       <h1>Add Astronauts</h1>
       <form
         id="main-login"

@@ -12,7 +12,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -26,6 +29,17 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.astronaut-list-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-astronaut-button {
+  width: 50%;
+  align-self: center;
 }
 
 @keyframes App-logo-spin {

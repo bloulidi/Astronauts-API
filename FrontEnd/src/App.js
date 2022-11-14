@@ -14,18 +14,24 @@ function App() {
   return (
     <div>
       {addAstronaut ? (
-        <div>
+        <div className="main-container">
           <AddAstronaut />
           <br />
-          <Button onClick={addAstronauts} variant="outline-primary">
+          <Button
+            className="add-astronaut-button"
+            onClick={addAstronauts}
+            variant="outline-primary">
             Check Astronaut List
           </Button>
         </div>
       ) : (
-        <div>
+        <div className="main-container">
           <AstronautsList />
           <br />
-          <Button onClick={addAstronauts} variant="outline-primary">
+          <Button
+            className="add-astronaut-button"
+            onClick={addAstronauts}
+            variant="outline-primary">
             Add Astronaut
           </Button>
         </div>

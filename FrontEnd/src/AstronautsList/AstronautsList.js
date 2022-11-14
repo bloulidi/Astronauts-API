@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import "../App.css";
 
 function AstronautsList() {
   const [astronautList, setAstronautList] = useState([]);
@@ -21,7 +22,7 @@ function AstronautsList() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="astronaut-list-container">
       <br />
       <h1>List of Astronauts</h1>
       <br />
