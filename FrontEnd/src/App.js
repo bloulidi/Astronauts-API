@@ -14,11 +14,13 @@ function App() {
       {addAstronaut ? (
         <div>
           <AddAstronaut />
+          <br />
           <button onClick={addAstronauts}>Check Astronaut List</button>
         </div>
       ) : (
         <div>
           <AstronautsList />
+          <br />
           <button onClick={addAstronauts}>Add Astronaut</button>
         </div>
       )}

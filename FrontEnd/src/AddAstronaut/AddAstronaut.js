@@ -16,18 +16,9 @@ function AddAstronaut() {
       name: data.name,
       age: data.age,
       id: uniqid(),
-    })
-      .then((res) => console.log(res.data))
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  const getAstronauts = (e) => {
-    e.preventDefault();
-    Axios.get("https://localhost:3001/astronauts").then((res) =>
-      console.log(res)
-    );
+    }).catch(function (error) {
+      console.log(error);
+    });
   };
 
   const handle = (e) => {
@@ -71,8 +62,7 @@ function AddAstronaut() {
         </label>
         <br />
         <div className="align-right">
-          <button type="submit">Submit</button>
-          <button onClick={getAstronauts}>GetAstronauts</button>
+          <button type="submit">Add Astronaut</button>
         </div>
       </form>
     </div>
