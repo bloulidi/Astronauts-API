@@ -10,14 +10,14 @@ function AstronautsList() {
     });
   };
 
-  const loadBooks = () => {
+  const loadAstronauts = () => {
     Axios.get("https://localhost:3001/astronauts").then((res) => {
       setAstronautList(res.data);
     });
   };
 
   useEffect(() => {
-    loadBooks();
+    loadAstronauts();
   }, []);
 
   return (
